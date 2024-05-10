@@ -27,6 +27,8 @@ package by.itstep.javatraining.revision.task;
 
 public class Task02 {
     public static int start(int a, int b, int c, int d) {
+
+
         return 0;
     }
 }
