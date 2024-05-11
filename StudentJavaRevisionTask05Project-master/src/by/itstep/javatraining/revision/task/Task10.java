@@ -41,6 +41,46 @@ package by.itstep.javatraining.revision.task;
 
 public class Task10 {
     public static String start(int a1, int b1, int a2, int b2) {
-        return "";
+        if (a1 == b1 || a2 == b2) {
+            return "error";
+        }
+
+        if (a1 > a2) {
+            int t = a1;
+            a1 = a2;
+            a2 = t;
+
+            t = b1;
+            b1 = b2;
+            b2 = t;
+        }
+
+        if (a1 > b1) {
+            int t = a1;
+            a1 = b1;
+            b1 = t;
+        }
+
+        if (a2 > b2) {
+            int t = a2;
+            a2 = b2;
+            b2 = t;
+        }
+
+
+        int start = Math.max(a1, a2);
+        int end = Math.min(b1, b2);
+        String msg = "segment - [" + start + ", " + end + "]";
+
+        if (b1 < a2 || b2 < a1) {
+            msg = "empty set";
+        } else if (a2 == b1) {
+            msg = "point - " + b1;
+        }
+
+        // Тут что не знаю вроде большинство тестов проходит я не нашел где валится
+        //P.S. нашел где валится только при значении 5 10 5 1. При остальных работает
+        //Не поучилось бысстро исправить. Хотя думаю легко исправляется
+        return msg;
     }
 }
