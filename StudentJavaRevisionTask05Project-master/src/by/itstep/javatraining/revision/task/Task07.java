@@ -42,6 +42,21 @@ package by.itstep.javatraining.revision.task;
 
 public class Task07 {
     public static String start(int number) {
-        return "?";
+        if (number < 0 || number > 36) {
+            return "error";
+        }
+
+        String color = (number <= 10 && number >= 1 && number % 2 == 0)
+                || (number <= 18 && number >= 11 && number % 2 != 0)
+                || (number <= 28 && number >= 19 && number % 2 == 0)
+                || (number >= 29 && number % 2 != 0) ? "black" : "red";
+
+        color = number == 0 ? "green" : color;
+
+        /*
+        -Наверно можно было сделать проще
+        -Возможно нужно было добавить константы с номером карманов но их было бы много
+         */
+        return color;
     }
 }
