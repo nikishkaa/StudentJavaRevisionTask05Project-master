@@ -27,8 +27,20 @@ package by.itstep.javatraining.revision.task;
 
 public class Task02 {
     public static int start(int a, int b, int c, int d) {
+        int count = 0;
+
+        count += (a == b) ? 1 : 0;
+        count += (a == c) ? 1 : 0;
+        count += (a == d) ? 1 : 0;
+        count += (b == c) ? 1 : 0;
+        count += (b == d) ? 1 : 0;
+        count += (c == d) ? 1 : 0;
 
 
-        return 0;
+        count = count == 1 ? 2 : count;
+        count = count == 6 ? 4 : count;
+
+
+        return count;
     }
 }
