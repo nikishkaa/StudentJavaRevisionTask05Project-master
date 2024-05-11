@@ -40,6 +40,12 @@ public class Task01 {
             return 0;
         }
 
-        return 0;
+        int x = n + 1;
+        while (x % k != 0) {
+            x++;
+        }
+
+        //Наверно можно решить проще
+        return x;
     }
 }
