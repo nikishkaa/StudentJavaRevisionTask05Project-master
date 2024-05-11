@@ -41,7 +41,34 @@ package by.itstep.javatraining.revision.task;
  */
 
 public class Task05 {
+    public static final int DAY_IN_BIG_MONTH = 31;
+    public static final int DAY_IN_SMALL_MONTH = 30;
+    public static final int LEAP_YEAR_FEB_DAY = 29;
+    public static final int N_LEAP_YEAR_FEB_DAY = 28;
+
     public static int start(int month, int year) {
-        return 0;
+        if (month < 1 || month > 12) {
+            return 0;
+        }
+
+        int days = (month % 2 != 0 && month < 8)
+                || (month >= 8 && month % 2 == 0)
+                ? DAY_IN_BIG_MONTH : DAY_IN_SMALL_MONTH;
+
+        if (month == 2) {
+            days = (year % 4 == 0 && year % 10 != 0) || (year % 400 == 0)
+                    ? LEAP_YEAR_FEB_DAY : N_LEAP_YEAR_FEB_DAY;
+        }
+
+        /*
+        -Не совсем получается избавиться от конструкции if т.к. тогда
+        перезаписывается правильное значение если месяц не равен 2
+
+        -Наверно можно добавить еще константы но их тогда будет много
+        и используются они по 1 разу (например в проверке на дурака
+        или в определении високосный год или нет)
+        */
+
+        return days;
     }
 }
