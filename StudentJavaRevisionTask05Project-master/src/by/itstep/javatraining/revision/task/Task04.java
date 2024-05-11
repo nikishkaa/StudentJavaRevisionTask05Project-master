@@ -35,6 +35,16 @@ package by.itstep.javatraining.revision.task;
 
 public class Task04 {
     public static boolean start(int year) {
-        return false;
+/*
+        if (year < 0) {
+                return false;
+            }
+        */
+
+
+        /* Вот тут не понял если оставить защиту от дурака то код перестаёт работать
+         хотя он должен работать */
+
+        return (year % 4 == 0 && year % 10 != 0) || (year % 400 == 0);
     }
 }
