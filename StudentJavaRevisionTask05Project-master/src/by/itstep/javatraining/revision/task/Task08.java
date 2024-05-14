@@ -43,6 +43,34 @@ package by.itstep.javatraining.revision.task;
 
 public class Task08 {
     public static String start(String color1, String color2) {
-        return "?";
+        if (color1 == null || color2 == null
+                || (!color1.equals("red") && !color1.equals("blue") && !color1.equals("yellow")) ||
+                ((!color2.equals("red") && !color2.equals("blue") && !color2.equals("yellow")))) {
+            return "error";
+        }
+
+        String resCol = color1.equals(color2) ? color1 : "violet";
+
+        resCol = (color1.equals("red") && color2.equals("yellow"))
+                || (color1.equals("yellow") && color2.equals("red"))
+                ? "orange" : resCol;
+
+        resCol = (color1.equals("blue") && color2.equals("yellow"))
+                || (color1.equals("yellow") && color2.equals("blue"))
+                ? "green" : resCol;
+
+//        if ((color1.equals("red") && color2.equals("yellow"))
+//                || (color1.equals("yellow") && color2.equals("red"))) {
+//            resCol = "orange";
+//        } else if (color1.equals("blue") && color2.equals("yellow")
+//                || color1.equals("yellow") && color2.equals("blue")) {
+//            resCol = "green";
+//        }
+
+
+       /*  Хз есть ли смысл заменять условную конструкцию 2 условными выражениями
+         количество строчек одинаковое но с условными конструкциями как то проще
+         понять что тут происходит*/
+        return resCol;
     }
 }
