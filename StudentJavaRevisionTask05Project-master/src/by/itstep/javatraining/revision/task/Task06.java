@@ -33,16 +33,8 @@ public class Task06 {
             return 0;
         }
 
-        int middleNum = c;
-
-        if ((a > b && a < c) || (a < b && a > c)) {
-            middleNum = a;
-        } else if ((b > a && b < c) || (b > c && b < a)) {
-            middleNum = b;
-        }
-
-            /*Тоже наверно можно решить через пару условных конструкций но тогда значение
-        из 1 перезаписывает значение из 2*/
+        int middleNum = (a > b && a < c) || (a < b && a > c) ? a : c;
+        middleNum = (b > a && b < c) || (b > c && b < a) ? b : middleNum;
 
         return middleNum;
     }
