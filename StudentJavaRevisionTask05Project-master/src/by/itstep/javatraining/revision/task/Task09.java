@@ -42,6 +42,14 @@ package by.itstep.javatraining.revision.task;
 
 public class Task09 {
     public static String start(int day, int month, int year) {
-        return "";
+        if (day <= 0 || month <= 0 || year < 0 || day > 31 || month > 12) {
+            return "Error.";
+        }
+
+        StringBuilder builder = new StringBuilder();
+
+
+
+        return builder.toString();
     }
 }
