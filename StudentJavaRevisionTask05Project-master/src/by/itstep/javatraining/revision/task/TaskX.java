@@ -31,6 +31,11 @@ package by.itstep.javatraining.revision.task;
 
 public class TaskX {
     public static int start(int h, int a, int b) {
-        return 0;
+        if (b <= 0 || h <= b || a <= b) {
+            return 0;
+        }
+
+
+        return ((h - b - 1) / (a - b)) + 1;
     }
 }
