@@ -40,14 +40,23 @@ public class Task03 {
 
         int dif = b - a;
 
-        if (a + dif != b || b + dif != c || c + dif != d) {
-            msg = "No arithmetic progression.";
-        }
+        msg = (a + dif != b || b + dif != c || c + dif != d)
+                ? "No arithmetic progression." : msg;
 
-        if (a + dif == b && b + dif == c && c + dif == d && dif > 0) {
-            msg = "Ascending arithmetic progression.";
-        }
+        msg = (a + dif == b && b + dif == c && c + dif == d && dif > 0)
+                ? "Ascending arithmetic progression." : msg;
 
+//        if (a + dif != b || b + dif != c || c + dif != d) {
+//            msg = "No arithmetic progression.";
+//        }
+//
+//        if (a + dif == b && b + dif == c && c + dif == d && dif > 0) {
+//            msg = "Ascending arithmetic progression.";
+//        }
+
+
+      /*  2 варианта решения. такое чувство что условные выражения
+                не сильно много строчек экономят*/
         return msg;
     }
 }
